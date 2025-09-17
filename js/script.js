@@ -11,19 +11,22 @@ axios.get(apiCards).then((response) => {
     const cards = response.data;
     // console log per vedere se funziona
     console.log(cards)
-    // ciclo la variabile dei dati
+    // ciclo la variabile dei dati salvati
     cards.forEach(card => {
+
         postCards += `<div class="card">
                         <img class="pin" src="img/pin.svg" alt="red pin">
-                        <img src="${card.url}" alt="${card.title}">
-                        <p>${card.title}</p>
+                        <img src="${card.url}" alt="${card.title}">                       
                         <span>${card.date}</span>
+                        <p>${card.title}</p>
                       </div>`;
+        
     }) 
-        // .catch(error => {
-        //     console.error(error)
-        // })
-
+        
      outPutCards.innerHTML = postCards;
+})
+
+.catch(error => {
+     console.error(error)
 });
 

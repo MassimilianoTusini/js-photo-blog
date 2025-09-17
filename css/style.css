@@ -6,7 +6,8 @@
 
 body{
     background-image: url(../img/cork.png);
-    font-family: "Sometype Mono", monospace;
+    font-family: "Dancing Script", cursive;
+    background-size: 50%;
 }
 
 /* Regole CSS header e titolo */
@@ -23,27 +24,29 @@ h1{
 }
 
 /* Regole container e card */
-
 .container{
-    max-width: 1020px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 0;
 }
 
 .row{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .card{
-    width: calc((1020px / 3) - (50px / 3));
+    width: calc((900px / 3) - (50px / 3));
     background-color: white;
     border: 15px solid white;
     position: relative;
+    box-shadow: 1px 1px 5px black;
+    transition: 0.2s ease;
 }
 
+/* Regole immagini e scritte */
 img{
     width: 100%;
 }
@@ -54,4 +57,20 @@ img{
     left: 50%;
     top: -25px;
     transform: translateX(-50%);
+}
+
+p{
+    font-size: 2rem;
+}
+
+/* Regole Hover */
+.card:hover{
+    transform: rotate(10deg) scale(1.05);
+    z-index: 10;
+    box-shadow: 2px 2px 10px black;
+    cursor: pointer;
+}
+
+.card:hover .pin{
+    display: none;
 }
