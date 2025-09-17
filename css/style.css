@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../img/cork.png);
+    font-family: "Sometype Mono", monospace;
+}
+
+/* Regole CSS header e titolo */
+header {
+    background-image: url(../img/wall.png);
+    font-family: "Edu TAS Beginner", cursive;
+}
+
+h1{
+    font-size: 4rem;
+    text-align: center;
+}
+
+/* Regole container e card */
+
+.container{
+    max-width: 80%;
+    margin: auto;
+}
