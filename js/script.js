@@ -38,27 +38,29 @@ function overlayEvent(){
      const everyCard = document.querySelectorAll(".card");
      const closeBtn = document.querySelector(".close-btn");
 
-     // aggiungo evento click su ogni card
+     // uso metodo forEach per il ciclo delle card
      everyCard.forEach(cardItem => {
+          // aggiungo evento click su ogni card
      cardItem.addEventListener("click", () => {
-          // prendo l'immagine principale della card 
+          // prendo l'immagine della card senza il .pin
           const img = cardItem.querySelector("img:not(.pin)");
           
           // creo immagine con appendChild
           const overlayImg = document.createElement("img");
-          // ???
+          // collegamento e ricerca delle immagini
           overlayImg.src = img.src;
           overlayImg.alt = img.alt;
           overlay.appendChild(overlayImg);
 
-          // Mostro l'overlay
+          // cambio display all'overlay
           overlay.style.display = "block";
 
-          // Attacco listener al bottone chiudi
+     });
+          // aggiungo un evento click al bottone chiudi
           closeBtn.addEventListener("click", ()=>{
                overlay.style.display = "none";
-               overlayImg.remove();
+               document.querySelector(".overlay-container img").remove();
           });
      });
-     });
-}
+        
+};
