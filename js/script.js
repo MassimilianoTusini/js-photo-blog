@@ -22,11 +22,43 @@ axios.get(apiCards).then((response) => {
                       </div>`;
         
     }) 
-        
+     // mando a schermo le card
      outPutCards.innerHTML = postCards;
+
+     overlayEvent();
 })
 
 .catch(error => {
      console.error(error)
 });
 
+function overlayEvent(){
+     // variabili di outPut
+     const overlay = document.querySelector(".overlay-container");
+     const everyCard = document.querySelectorAll(".card");
+     const closeBtn = document.querySelector(".close-btn");
+
+     // aggiungo evento click su ogni card
+     everyCard.forEach(cardItem => {
+     cardItem.addEventListener("click", () => {
+          // prendo l'immagine principale della card 
+          const img = cardItem.querySelector("img:not(.pin)");
+          
+          // creo immagine con appendChild
+          const overlayImg = document.createElement("img");
+          // ???
+          overlayImg.src = img.src;
+          overlayImg.alt = img.alt;
+          overlay.appendChild(overlayImg);
+
+          // Mostro l'overlay
+          overlay.style.display = "block";
+
+          // Attacco listener al bottone chiudi
+          closeBtn.addEventListener("click", ()=>{
+               overlay.style.display = "none";
+               overlayImg.remove();
+          });
+     });
+     });
+}
