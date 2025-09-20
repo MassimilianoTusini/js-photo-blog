@@ -32,6 +32,7 @@ axios.get(apiCards).then((response) => {
      console.error(error)
 });
 
+// funzione evento overlay
 function overlayEvent(){
      // variabili di outPut
      const overlay = document.querySelector(".overlay-container");
@@ -56,11 +57,12 @@ function overlayEvent(){
           overlay.style.display = "block";
 
      });
-          // aggiungo un evento click al bottone chiudi
-          closeBtn.addEventListener("click", ()=>{
-               overlay.style.display = "none";
-               document.querySelector(".overlay-container img").remove();
-          });
      });
-        
+
+     // aggiungo un evento click al bottone chiudi
+     closeBtn.addEventListener("click", ()=>{
+          overlay.style.display = "none";
+          document.querySelector(".overlay-container img").remove();
+     });
+       
 };
